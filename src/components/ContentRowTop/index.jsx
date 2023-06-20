@@ -1,6 +1,8 @@
 import ContentRowMovies from "../ContentRowMovies";
 import GenresInDb from "../GenresInDb";
 import LastMovieInDb from "../LastMovieInDb";
+import mandalorian from "../../assets/images/mandalorian.jpg";
+import MovieList from "../MovieList";
 
 function ContentRowTop() {
   return (
@@ -10,18 +12,34 @@ function ContentRowTop() {
       </div>
 
       {/* <!-- Content Row Movies--> */}
-      <ContentRowMovies />
+      <ContentRowMovies infoList={[{}, {}, {}]} />
       {/* <!-- End movies in Data Base --> */}
 
       {/* <!-- Content Row Last Movie in Data Base --> */}
       <div className="row">
         {/* <!-- Last Movie in DB --> */}
-        <LastMovieInDb />
+        <LastMovieInDb
+          photo={mandalorian}
+          title="Star Wars - Mandalorian"
+          description="Lorem ipsum dolor sit amet"
+        />
         {/* <!-- End content row last movie in Data Base --> */}
 
         {/* <!-- Genres in DB --> */}
-        <GenresInDb/>
+        <GenresInDb genreList={["Acción", "Hola"]} />
       </div>
+
+      <MovieList
+        movieList={[
+          {
+            title: "Hola",
+            rating: 2,
+            duration: 210,
+            genres: [{ name: "Accion" }],
+            awards: 5,
+          },
+        ]}
+      />
     </div>
   );
 }
